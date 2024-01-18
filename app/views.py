@@ -7,6 +7,9 @@ from django.contrib import messages
 # Create your views here.
 
 def index(request):
+    photo=Regestration.objects.all()
+    context={'photo':photo}
+    
     if request.method == "POST":
         name = request.POST.get('name')
         password=request.POST.get('password')
@@ -15,4 +18,4 @@ def index(request):
         messages.success(request, 'Registration successful!')
         return HttpResponseRedirect(request.path_info)
 
-    return render(request,"base.html")
+    return render(request,"base.html",context)

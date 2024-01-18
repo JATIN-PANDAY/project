@@ -199,6 +199,11 @@
                 </div>
             </div>
         </div>
+        {%if photo%}
+        {%for i in photo%}
+        <img src="/media/{{i.image}}" class="d-block " style="width:100px;height:100px">
+        {%endfor%}
+        {%endif%}
 </body>
 
     <!-- Footer Start -->
